@@ -2,7 +2,7 @@
 
 # Description
 
-transandance - boost creativity, self-confidence, adaptability and teamwork skills by creating a real-world webapp as a team.
+transcendence - boost creativity, self-confidence, adaptability and teamwork skills by creating a real-world webapp as a team.
 
 # Instructions
 
