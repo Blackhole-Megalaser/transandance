@@ -25,6 +25,7 @@
             pythonEnv
             pkgs.sqlite
             pkgs.postgresql
+            pkgs.ruff
           ];
         };
       }
