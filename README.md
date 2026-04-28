@@ -1,5 +1,7 @@
 *This project has been created as part of the 42 curriculum by tlair, kcolin, cczerwin, lvan-bre, ael-ghaz.*
 
+[![CI](https://github.com/Blackhole-Megalaser/transcendence/actions/workflows/main.yml/badge.svg)](https://github.com/Blackhole-Megalaser/transcendence/actions/workflows/main.yml)
+
 # Description
 
 Transcendence is a **group project (4-5 people)** intended to  boost creativity, self-confidence, adaptability and teamwork skills by creating a real-world webapp as a team.
