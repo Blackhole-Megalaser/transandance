@@ -8,7 +8,7 @@ services:
     ports:
       - 5432:5432
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U $POSTGRES_USER -d $POSTGRES_DB"]
+      test: [ "CMD-SHELL", "pg_isready -U $POSTGRES_USER -d $POSTGRES_DB" ]
       interval: 1s
       timeout: 1s
       retries: 180
@@ -22,3 +22,12 @@ services:
         condition: service_healthy
     ports:
       - 8000:8000
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /app
+          initial_sync: true
+          ignore:
+            - .jj
+            - .git
