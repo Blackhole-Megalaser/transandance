@@ -31,3 +31,4 @@ services:
           ignore:
             - .jj
             - .git
+            - .direnv
