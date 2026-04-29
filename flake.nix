@@ -18,6 +18,7 @@
             django
             django-environ
             psycopg2
+            pillow
           ]);
       in {
         devShells.default = pkgs.mkShell {

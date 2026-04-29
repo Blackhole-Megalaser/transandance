@@ -3,7 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
 
-from .forms import UserRegisterForm, UserModifyForm
+from .forms import UserRegisterForm, UserModifyForm, UserProfileUpdateForm
+from .models import UserProfile
 
 
 def index(request):
@@ -42,15 +43,23 @@ def signup(request):
 @login_required
 def account_modify(request):
     user = User.objects.get(pk=request.user.pk)
+    user_profile, _created = UserProfile.objects.get_or_create(user=user)
     if request.method == "POST":
-        form = UserModifyForm(request.POST, instance=user)
-        if form.is_valid():
-            form.save()
+        user_form = UserModifyForm(request.POST, instance=user)
+        profile_form = UserProfileUpdateForm(
+            request.POST,
+            request.FILES,
+            instance=user_profile,
+        )
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
             return redirect("profile")
     else:
-        form = UserModifyForm(instance=request.user)
+        user_form = UserModifyForm(instance=request.user)
+        profile_form = UserProfileUpdateForm(instance=user_profile)
     return render(
         request,
         "back/account_modify.html",
-        {"form": form},
+        {"user_form": user_form, "profile_form": profile_form},
     )
