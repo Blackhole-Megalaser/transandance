@@ -4,7 +4,7 @@ re:
 	docker compose down
 	+make run
 dev:
-	docker compose up --build
+	docker compose up --build --watch
 redev:
 	docker compose down
 	+make dev
