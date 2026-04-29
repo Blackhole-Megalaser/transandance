@@ -1,6 +1,5 @@
 {% load static %}
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -12,9 +11,10 @@
 
 <body>
     <h2>{{ user.username }} - Modify information</h2>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form }}
+        {{ user_form }}
+        {{ profile_form }}
         <button type="submit">Update</button>
     </form>
     <p><a href="/accounts/profile">Back to my profile</a></p>

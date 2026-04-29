@@ -4,6 +4,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.hashers import check_password
 from django.utils import timezone
 
+from .models import UserProfile
+
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
@@ -40,3 +42,9 @@ class UserModifyForm(forms.ModelForm):
         if commit:
             user.save()
         return user
+
+
+class UserProfileUpdateForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ["profile_image"]

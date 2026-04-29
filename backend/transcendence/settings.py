@@ -16,17 +16,16 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = environ.Env()
 
 # Take environment variables from .env file
-environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
+environ.Env.read_env(os.path.join(BASE_DIR.parent, ".env"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-# TODO: Remove before pushing to vogsphere
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-9qnoi)x8u$_th9@*cdp8vp23!i2kgwglwrc*q^n4d=sct6rdu2"
 
@@ -40,8 +39,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "daphne",
-    "back",
     "chat",
+    "back.apps.BackConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -132,6 +131,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = "static/"
+MEDIA_ROOT = "/media"
+MEDIA_URL = "media/"
 
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
