@@ -53,3 +53,19 @@ Les objectifs pour la semaine suivante:
 - Avoir un debut de jeu
 - Voir comment connecter front <--> back
 
+- decider sur un design
+- objectifs semaine pro
+  - tailwind couleurs custom
+  - info des choses a stocker dans la BDD
+  - commencer a faire un debut de jeu
+  - essayer d'avoir une esquise du site
+  - plus de familiariser
+  - savoir comment connecter le back et front
+- retro sur cette semaine
+  - une semaine ce n'est pas suffisant pour vraiment voir un groupe de nouveau languages
+  - peut-etre echanger entre nous pour essayer de metter en commun les choses que l'on a apris
+    - lvan-bre: js/css/html/tailwind
+    - le web: un language a copier-coller
+    - tailwind: pas d'interaction avec le css, seulement le html. c'est pas mal. facilement responsive
+    - django: beaucoup de copier-coller et de tutoriel
+    - tlair: vue pas trop regardé, surtout regardé le js
