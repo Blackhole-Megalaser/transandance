@@ -30,6 +30,7 @@ services:
           ignore:
             - .jj
             - .git
+            - .direnv
 
   redis:
     image: redis:latest
