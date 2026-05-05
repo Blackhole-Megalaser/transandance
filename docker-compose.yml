@@ -30,4 +30,12 @@ services:
           ignore:
             - .jj
             - .git
-            - .direnv
+
+  redis:
+    image: redis:latest
+    restart: unless-stopped
+    # set shared memory limit when using docker compose
+    shm_size: 128mb
+    env_file: .env
+    ports:
+      - 6380:6379
