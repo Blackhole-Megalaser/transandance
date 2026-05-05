@@ -2,6 +2,10 @@
 django==5.2.13
 django-environ==0.12.0
 
+# REDIS CACHE
+django-redis
+redis
+
 # POSTGRES
 psycopg2==2.9.11
 
