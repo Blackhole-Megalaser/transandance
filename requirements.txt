@@ -2,13 +2,10 @@
 django==5.2.13
 django-environ==0.12.0
 
-<<<<<<< HEAD
 # REDIS CACHE
 django-redis
 redis
 
-=======
->>>>>>> 3e433b9 (Chat from the django tutorial accessible, require a redis server, TODO: add a dockerfile and change the structure to accomodate for it)
 # POSTGRES
 psycopg2==2.9.11
 
