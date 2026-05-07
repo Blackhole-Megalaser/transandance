@@ -7,6 +7,8 @@ services:
     env_file: .env
     ports:
       - 5444:5432
+    networks:
+      - ft_cat-network
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U $POSTGRES_USER -d $POSTGRES_DB" ]
       interval: 1s
@@ -14,7 +16,7 @@ services:
       retries: 180
 
   back:
-    build: .
+    build: ./backend
     restart: unless-stopped
     env_file: .env
     depends_on:
@@ -22,15 +24,26 @@ services:
         condition: service_healthy
     ports:
       - 8000:8000
+    networks:
+      - ft_cat-network
     develop:
       watch:
         - action: sync
-          path: .
+          path: ./backend
           target: /app
           ignore:
             - .jj
             - .git
             - .direnv
+  front:
+    build: ./frontend
+    restart: unless-stopped
+    ports:
+      - 80:80
+    networks:
+      - ft_cat-network
+    depends_on:
+      - back
 
   redis:
     image: redis:latest
@@ -40,3 +53,7 @@ services:
     env_file: .env
     ports:
       - 6380:6379
+
+networks:
+  ft_cat-network:
+    driver: bridge
