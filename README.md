@@ -47,7 +47,7 @@ TODO: add instructions on how to build and start the project
 - Vite documentation - https://vite.dev/guide/
 - Tailwind documentation - https://tailwindcss.com/docs/installation/using-vite
 
-**AI was not used in this project**
+**AI was used to produce graphical assets in this project**
 
 # Team Information
 
