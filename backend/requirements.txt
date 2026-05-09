@@ -3,13 +3,13 @@ django==5.2.13
 django-environ==0.12.0
 
 # REDIS CACHE
-django-redis
-redis
+django-redis==6.0.0
+redis==7.4.0
 
 # POSTGRES
 psycopg2==2.9.11
 
 # WEBSOCKETS
-channels
-channels_redis
-daphne
+channels==4.3.2
+channels_redis==4.3.0
+daphne==4.2.1

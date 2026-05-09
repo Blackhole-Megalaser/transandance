@@ -5,7 +5,7 @@ services:
     # set shared memory limit when using docker compose
     shm_size: 128mb
     env_file: .env
-    ports:
+    expose:
       - "5444:5432"
     networks:
       - ft_cat-network
@@ -52,7 +52,7 @@ services:
     # set shared memory limit when using docker compose
     shm_size: 128mb
     env_file: .env
-    ports:
+    expose:
       - "6380:6379"
     networks:
       - ft_cat-network
