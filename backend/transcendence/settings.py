@@ -39,7 +39,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-	"daphne",	# noqa
+    "daphne",
     "back",
     "chat",
     "django.contrib.admin",
