@@ -27,6 +27,7 @@
             pkgs.postgresql
             pkgs.ruff
             pkgs.act
+            pkgs.nodejs
           ];
         };
       }

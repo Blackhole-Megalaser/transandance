@@ -36,16 +36,6 @@ services:
             - .git
             - .direnv
 
-  front:
-    build: ./frontend
-    restart: unless-stopped
-    ports:
-      - "1080:80"
-    networks:
-      - ft_cat-network
-    depends_on:
-      - back
-
   redis:
     image: redis:latest
     restart: unless-stopped
