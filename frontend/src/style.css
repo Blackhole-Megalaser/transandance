@@ -1,3 +1,144 @@
  @import "tailwindcss";
 
- 
+@theme {
+
+  --color-pink-pastel-50:  #fff5f7;
+  --color-pink-pastel-100: #ffe4e9; 
+  --color-pink-pastel-200: #ffc9d4;
+  --color-pink-pastel-300: #ff99ac;
+  --color-pink-pastel-400: #ff6b88;
+  --color-pink-pastel-500: #f0506e;
+  --color-pink-pastel-600: #d43d5a;
+  --color-pink-pastel-700: #b13149;
+  --color-pink-pastel-800: #8f293c;
+  --color-pink-pastel-900: #6b2d39;
+
+  --color-lavender-pastel-50:  #f3f0ff;
+  --color-lavender-pastel-100: #e8e1ff;
+  --color-lavender-pastel-200: #d1c5ff;
+  --color-lavender-pastel-300: #b2a1ff;
+  --color-lavender-pastel-400: #937bff;
+  --color-lavender-pastel-500: #7a5fff;
+  --color-lavender-pastel-600: #6449e6;
+  --color-lavender-pastel-700: #543cc1;
+  --color-lavender-pastel-800: #46329c;
+  --color-lavender-pastel-900: #3c3260;
+
+    /* Noirs profonds (L'Obsidienne) */
+  --color-obsidian-50:  #f2f2f2;
+  --color-obsidian-100: #e5e5e5;
+  --color-obsidian-200: #cccccc;
+  --color-obsidian-300: #b3b3b3;
+  --color-obsidian-400: #808080;
+  --color-obsidian-500: #4d4d4d;
+  --color-obsidian-600: #333333;
+  --color-obsidian-700: #262626;
+  --color-obsidian-800: #1a1a1a;
+  --color-obsidian-900: #121212;
+  --color-obsidian-950: #0a0a0a;
+
+  --color-crimson-50:  #fff1f1;
+  --color-crimson-100: #ffdfdf;
+  --color-crimson-200: #ffc5c5;
+  --color-crimson-300: #ff9d9d;
+  --color-crimson-400: #ff6666;
+  --color-crimson-500: #ff1a1a;
+  --color-crimson-600: #e60000;
+  --color-crimson-700: #b30000;
+  --color-crimson-800: #800000;
+  --color-crimson-900: #4d0000;
+
+  --color-steel-300: #d1d5db;
+  --color-steel-500: #6b7280;
+
+  --color-bg-main:          var(--color-pink-pastel-50);
+  --color-bg-card:          #ffffff;
+  --color-borders-outline:  var(--color-pink-pastel-100);
+
+  /* Sidebar */
+  --color-sidebar:          var(--color-lavender-pastel-100);
+  --color-sidebar-border:   var(--color-lavender-pastel-200);
+  --color-sidebar-text:     var(--color-lavender-pastel-900);
+
+  --color-button-sidebar-normal:  var(--color-sidebar);
+  --color-button-sidebar-hover:   var(--color-pink-pastel-200);
+
+  /* Navbar */
+  --color-navbar:           var(--color-pink-200);
+  --color-navbar-border:    var(--color-pink-pastel-100);
+  --color-navbar-text:      var(--color-pink-pastel-900);
+  --color-navbar-menu:      var(--color-lavender-pastel-300);
+  
+  /* text */
+  --color-text-main:        var(--color-pink-pastel-900);
+  --color-title:            var(--color-pink-pastel-400);
+  --color-placeholder:      var(--color-pink-pastel-200);
+  --color-text-button-1 :   var(--color-pink-pastel-50);
+  --color-text-button-2 :   var(--color-pink-pastel-900);
+  
+  /* Buton 1 */
+  --color-button-1-normal:  var(--color-pink-pastel-300);
+  --color-button-1-hover:   var(--color-pink-pastel-400);
+  --color-button-1-active:  var(--color-pink-pastel-500);
+  --color-button-1-disable: var(--color-pink-pastel-100);
+
+  /* Buton 2 */
+  --color-button-2-normal:  var(--color-lavender-pastel-200);
+  --color-button-2-hover:   var(--color-lavender-pastel-100);
+  --color-button-2-active:  var(--color-lavender-pastel-200);
+  --color-button-2-disable: var(--color-lavender-pastel-50);
+
+
+  --color-theme-button:           var(--color-lavender-pastel-200);
+  --color-theme-button-shadow:    var(--color-lavender-pastel-900);
+  --color-theme-button-border:    var(--color-lavender-pastel-900);
+  --color-theme-cursor:           var(--color-white);
+  --color-theme-cursor-border:    var(--color-lavender-pastel-50);
+  --color-theme-cursor-shadow:    rgba(60, 50, 96, 0.2);
+  
+}
+
+[data-theme='dark'] {
+
+
+  /* Fond et Structure */
+  --color-bg-main:          var(--color-obsidian-800);
+  --color-bg-card:          var(--color-obsidian-900);
+  --color-borders-outline:  var(--color-crimson-900);
+
+
+  --color-sidebar:          var(--color-obsidian-950);
+  --color-sidebar-border:   var(--color-crimson-900);
+  --color-sidebar-text:     var(--color-obsidian-200);
+
+  
+  /* Navbar */
+  --color-navbar:           rgba(18,18,18, 0.9);
+  --color-navbar-border:    var(--color-obsidian-800);
+  --color-navbar-text:      var(--color-obsidian-50);
+  --color-navbar-menu:      #d05965;
+  
+  /* Typographie */
+  --color-text-main:        var(--color-steel-300);
+  --color-title:            var(--color-crimson-500);
+  --color-placeholder:      var(--color-steel-500);
+  
+  /* Bouton 1 (L'Action / Le Rouge) */
+  --color-button-1-normal:  var(--color-crimson-600);
+  --color-button-1-hover:   var(--color-crimson-500);
+  --color-button-1-active:  var(--color-crimson-700);
+  --color-button-1-disable: var(--color-crimson-900);
+
+  /* Bouton 2 (Le Mystère / Noir sur Noir) */
+  --color-button-2-normal:  var(--color-obsidian-800);
+  --color-button-2-hover:   var(--color-obsidian-900);
+  --color-button-2-active:  var(--color-obsidian-950);
+  --color-button-2-disable: var(--color-obsidian-950);
+
+  --color-theme-button:         var(--color-obsidian-500);
+  --color-theme-button-shadow:  var(--color-obsidian-900);
+  --color-theme-button-border:  var(--color-obsidian-800);
+  --color-theme-cursor:         var(--color-obsidian-600);
+  --color-theme-cursor-border:  var(--color-obsidian-700);
+  --color-theme-cursor-shadow:  var(--color-crimson-600);
+}
