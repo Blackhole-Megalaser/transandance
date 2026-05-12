@@ -53,6 +53,8 @@ Les objectifs pour la semaine suivante:
 - Avoir un debut de jeu
 - Voir comment connecter front <--> back
 
+## Resume de la reunion 2
+
 - decider sur un design
 - objectifs semaine pro
   - tailwind couleurs custom
@@ -69,3 +71,22 @@ Les objectifs pour la semaine suivante:
     - tailwind: pas d'interaction avec le css, seulement le html. c'est pas mal. facilement responsive
     - django: beaucoup de copier-coller et de tutoriel
     - tlair: vue pas trop regardé, surtout regardé le js
+
+# Reunion 3
+
+Pour la semaine prochaine, l'objectif c'est d'avoir un squelette de site fonctionnel (pour la navigation au moins) et d'avoir de la connexion entre front <--> back que ce soit pour utiliser les données ou afficher des éléments dynamiques dans les pages.
+
+--> On garde le SSR et on ne touche pas au SPA même avec un baton
+--> On push nos avancées sur Vue dans des components séparés sur le main pour avoir une vision globale sur ce qui est fait même si actuellement non fonctionnel
+(on remplacera plus tard les boutons et autres éléments pour uniformiser les styles sur tout le site)
+
+Si possible ajouter les ressources intéressantes dans des fichiers *.md dans le dossier docs avec éventuellement quelques explications rapides.
+
+Au niveau des features intéressantes:
+
+--> Tri des mots par thématiques et par difficulté pour le scribl
+--> Ajouter quelques espaces avec des fausses pubs
+
+## Resume de la reunion 3
+
+placeholder 😊
