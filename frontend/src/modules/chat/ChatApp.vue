@@ -1,52 +1,56 @@
 <template>
-
+	<div id="app">
+		<h2>Work in progress</h2>
+		<button v-on:click="sendMessage('hello')">Send< </button>
+	</div>
 </template>
 
 <script setup>
-import { useThemeStore } from '../../storage/theme.js';
-import { ref } from 'vue';
 
-import Button from '../../components/Button.vue';
+export default {
+	name: 'App',
+    data: function() {
+      return {
+		connection: null
+	  }
+    },
+	methods: {
+		sendMessage: function(message) {
+			console.log("Hello")
+			console.log(this.connection);
+			this.connection.send(message);
+		}
+	},
+	created: function() {
+		console.log("Init connection to WebSocket")
+		this.connection = new WebSocket("wss://echo.websocket.org")
 
-const roomName = JSON.parse(document.getElementById('room-name').textContent);
+		this.connection.onopen = function(event) {
+			console.log(event)
+			console.log("Success")
+		}
 
-const chatSocket = new WebSocket(
-    'ws://'
-    + window.location.host
-    + '/ws/chat/'
-    + 'chat'
-    + '/'
-);
+		this.connection.onmessage = function(event) {
+			console.log(event);
+		}
 
-chatSocket.onmessage = function(e) {
-    const data = JSON.parse(e.data);
-    document.querySelector('#chat-log').value += (data.message + '\n');
-};
-
-chatSocket.onclose = function(e) {
-    console.error('Chat socket closed unexpectedly');
-};
-
-document.querySelector('#chat-message-input').focus();
-document.querySelector('#chat-message-input').onkeyup = function(e) {
-    if (e.key === 'Enter') {  // enter, return
-        document.querySelector('#chat-message-submit').click();
-    }
-};
-
-document.querySelector('#chat-message-submit').onclick = function(e) {
-    const messageInputDom = document.querySelector('#chat-message-input');
-    const message = messageInputDom.value;
-    chatSocket.send(JSON.stringify({
-        'message': message
-    }));
-    messageInputDom.value = '';
-};
+	}
+}
 
 </script>
 
 <style>
 @import '../../style.css';
+
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
 
 body {
   @apply bg-bg-main pt-20

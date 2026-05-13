@@ -1,10 +1,10 @@
 import { createApp } from 'vue';
 import { setupPinia } from '../../shared/pinia';
-import HomeApp from './ChatApp.vue';
+import ChatApp from './ChatApp.vue';
 import { useThemeStore } from '../../storage/theme';
 
 const pinia = setupPinia();
-const app = createApp(HomeApp);
+const app = createApp(ChatApp);
 app.use(pinia);
 
 const savedTheme = useThemeStore();
@@ -12,4 +12,3 @@ document.documentElement.setAttribute("data-theme", savedTheme.current);
 
 
 app.mount('#app')
-
