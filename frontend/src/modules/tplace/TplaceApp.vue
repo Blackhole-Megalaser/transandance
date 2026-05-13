@@ -2,14 +2,14 @@
   <NavBar
     @changeStatus="showSideBar = !showSideBar"
     variant="nav"
-    class="z-40"
+    class="z-60"
   />
 
   <sideBar 
     :class="showSideBar === false ? '-translate-x-60 rotate-360' : 'translate-x-0 -rotate-360'"
     class="transition duration-200 z-50"
   />
-  <TPlace :class="showSideBar ?'brightness-50 z-0' : 'brightness-100 z-10'"/>
+  <TPlace :class="showSideBar ?'brightness-50 z-0' : 'brightness-100 z-40'"/>
 </template>
 
 <script setup>

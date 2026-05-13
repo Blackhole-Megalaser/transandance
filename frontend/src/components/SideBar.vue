@@ -1,8 +1,8 @@
 <template>
-  <div class="flex min-h-dvh w-60 bg-sidebar fixed">
-    <aside class="p-6 h-full w-full">
-      <header class="w-full">
-        <div class="flex-centered flex-col">
+  <div class="w-60 h-[calc(100svh-5rem)] bg-sidebar fixed top-20">
+    <aside class="p-6 h-full w-full flex flex-col">
+      <header class="flex-none">
+        <div class="flex-centered">
           <img 
             :src="!themeIndex ? cute_cat : mean_cat"" 
             alt="mini logo"
@@ -11,52 +11,57 @@
         </div>
         <hr>
       </header>
-      <ul 
-        class="flex flex-col text-red-500"
-      >
-        <li class="min-h-10 flex-col items-center">
-          <ButtonSideBar
-            @changeStatus="showGames = !showGames"
-          >Games</ButtonSideBar>
-          <div 
-            :class="showGames === false ? 'hidden' : 'flex flex-col'"
-            class="pl-6"
-          >
-            <ul 
-              class="bg-button-sidebar-2-normal rounded-3xl"
+      <section class="flex-auto">
+        <ul 
+          class="flex flex-col text-red-500"
+        >
+          <li class="min-h-10 flex-col items-center">
+            <ButtonSideBar
+              @changeStatus="showGames = !showGames"
+            >Games</ButtonSideBar>
+            <div 
+              :class="showGames === false ? 'hidden' : 'flex flex-col'"
+              class="pl-6"
             >
-              <li>
-                <a href="">
-                  <ButtonSideBar
-                    variant="secondary"
-                  >
-                    skribbl.cat
-                  </ButtonSideBar>
-                </a>
-              </li>
-              <li>
-                <a href="tplace.html">
+              <ul 
+                class="bg-button-sidebar-2-normal rounded-3xl"
+              >
+                <li>
+                  <a href="">
                     <ButtonSideBar
                       variant="secondary"
                     >
-                      tplace
+                      skribbl.cat
                     </ButtonSideBar>
                   </a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="h-10 flex items-center">
-          <a href="http://localhost:8000/chat">
-            <ButtonSideBar>Chat rooms</ButtonSideBar>
-          </a>
-        </li>
-        <li class="h-10 flex items-center">
-          <ButtonSideBar>Friendlist</ButtonSideBar>
-        </li>
-      </ul>
-      <footer>
-
+                </li>
+                <li>
+                  <a href="tplace.html">
+                      <ButtonSideBar
+                        variant="secondary"
+                      >
+                        tplace
+                      </ButtonSideBar>
+                    </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="h-10 flex items-center">
+            <a href="http://localhost:8000/chat">
+              <ButtonSideBar>Chat rooms</ButtonSideBar>
+            </a>
+          </li>
+          <li class="h-10 flex items-center">
+            <ButtonSideBar>Friendlist</ButtonSideBar>
+          </li>
+        </ul>
+      </section>
+      <footer class="flex-none text-xs underline text-sidebar-text-1">
+        <hr>
+        <a href="">Termes de Service</a>
+        <br>
+        <a href="">Politique de confidentialité</a>
       </footer>
     </aside>
   </div>

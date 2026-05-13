@@ -39,6 +39,7 @@ const emit = defineEmits(['changeStatus']);
 }
 .btn-secondary {
   @apply hover:bg-button-sidebar-2-hover active:bg-button-sidebar-2-active
+    text-sidebar-text-2
   
 }
 </style>
