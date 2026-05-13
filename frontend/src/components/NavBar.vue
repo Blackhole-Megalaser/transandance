@@ -69,7 +69,7 @@ defineProps ({
 @import "../style.css";
 
 nav {
-  @apply absolute w-full top-0 h-20 lg:h-40
+  @apply fixed w-full top-0 h-20 lg:h-40
 }
 button {
   @apply cursor-pointer

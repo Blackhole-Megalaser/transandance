@@ -1,6 +1,6 @@
 <template>
   <div class="flex min-h-dvh w-60 bg-sidebar fixed">
-    <aside class="p-6 w-full">
+    <aside class="p-6 h-full w-full">
       <header class="w-full">
         <div class="flex-centered flex-col">
           <img 
@@ -54,11 +54,10 @@
         <li class="h-10 flex items-center">
           <ButtonSideBar>Friendlist</ButtonSideBar>
         </li>
-        <li class="sm:hidden">
-          <hr>
-          <ButtonSideBar>Change theme</ButtonSideBar>
-        </li>
       </ul>
+      <footer>
+
+      </footer>
     </aside>
   </div>
 </template>
