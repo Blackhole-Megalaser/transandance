@@ -56,5 +56,17 @@ const emit = defineEmits(['changeStatus']);
 .btn-secondary:disabled {
   background-color: var(--color-button-2-disable);
 }
+.btn-log-in {
+  @apply shadow-button-1-normal;
+  background-color: var(--color-button-1-normal);
+  color: var(--color-text-button-1);
+}
+.btn-log-in:hover {
+  background-color: var(--color-button-1-hover);
+}
+.btn-log-in:active {
+  @apply duration-100 px-5.5 py-1.5;
+  background-color: var(--color-button-1-active);
+}
 
 </style>
