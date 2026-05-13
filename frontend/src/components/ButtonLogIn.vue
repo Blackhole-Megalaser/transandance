@@ -35,7 +35,7 @@ const emit = defineEmits(['changeStatus']);
   background-color: var(--color-button-1-hover);
 }
 .btn-primary:active {
-  @apply duration-100 px-5.5 py-1.5;
+  @apply duration-100 px-1.5 py-0.5 sm:px-5.5 sm:py-1.5;
   background-color: var(--color-button-1-active);
 }
 
