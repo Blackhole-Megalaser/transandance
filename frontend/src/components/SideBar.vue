@@ -18,6 +18,11 @@
 		            <a href="tplace.html">tplace</a>
               </Button>
             </li>
+			<li>
+				<Button>
+		            <a href="chat.html">chat</a>
+              </Button>
+			</li>
           </ul>
         </li>
         <li></li>
