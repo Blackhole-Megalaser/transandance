@@ -2,7 +2,7 @@
   <div class="flex min-h-dvh w-60 bg-sidebar absolute">
     <aside class="p-6">
       <ul 
-        class="flex flex-col text-red-500""
+        class="flex flex-col text-red-500"
       >
         <li>
           <ButtonSideBar
