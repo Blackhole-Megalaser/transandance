@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex justify-center">
+  <nav class="flex justify-center relative">
     <div class="flex items-center w-full h-20 bg-navbar border-b border-navbar-border px-3 sm:px-6 shadow-md">
       <div class="flex flex-none justify-start w-1/5">
         <button class="flex-center" type="button" @click="$emit('changeStatus')">
@@ -35,9 +35,20 @@
         <div class="hidden sm:max-lg:flex">
           <ThemeToggle></ThemeToggle>
         </div>
-        <button class="flex items-center">
-          profile
-        </button>
+        <div>
+          <div v-if="isLogged">
+            <Button class="flex items-center">
+              Profile
+            </Button>
+          </div>
+          <div v-else class="h-10 w-24 flex-center">
+            <a href="/">
+              <Button>
+                Log in
+              </Button>
+            </a>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -46,7 +57,8 @@
 
 <script setup>
 import { useThemeStore } from '../storage/theme.js';
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
+import Button from './Button.vue';
 import ThemeButton from './ThemeButton.vue';
 import ThemeToggle from './ThemeToggle.vue';
 import cute_paw from '../assets/cute_paw.svg?component';
@@ -57,6 +69,7 @@ import ft_mean from '../assets/ft_cat-dark.png'
 const theme = useThemeStore();
 const themeIndex = computed (() => theme.getThemeIndex());
 const emit = defineEmits(['changeStatus']);
+const isLogged = ref(false);
 
 defineProps ({
   variant: {
