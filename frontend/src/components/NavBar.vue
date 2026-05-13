@@ -27,7 +27,7 @@
       </div>
 
       <div 
-        class="flex flex-none justify-end w-16 sm:w-38 lg:w-40 md:gap-10"
+        class="flex flex-none justify-end w-16 sm:w-38 lg:w-40 gap-10"
       >
         <ThemeButton class="hidden lg:flex"></ThemeButton>
         <div class="hidden sm:max-lg:flex">
