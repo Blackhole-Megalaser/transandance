@@ -2,6 +2,7 @@
   <NavBar
     @changeStatus="showSideBar = !showSideBar"
     variant="nav"
+    class="z-40"
   />
 
   <sideBar 
