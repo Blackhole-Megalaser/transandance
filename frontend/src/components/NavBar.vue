@@ -41,11 +41,11 @@
               Profile
             </Button>
           </div>
-          <div v-else class="h-10 w-24 flex-center">
+          <div v-else class="h-10 w-24 flex items-center justify-end">
             <a href="/">
-              <Button>
+              <ButtonLogIn>
                 Log in
-              </Button>
+              </ButtonLogIn>
             </a>
           </div>
         </div>
@@ -58,6 +58,7 @@
 <script setup>
 import { useThemeStore } from '../storage/theme.js';
 import { computed, ref } from 'vue';
+import ButtonLogIn from './ButtonLogIn.vue';
 import Button from './Button.vue';
 import ThemeButton from './ThemeButton.vue';
 import ThemeToggle from './ThemeToggle.vue';
