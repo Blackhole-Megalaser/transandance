@@ -2,6 +2,7 @@
 
 @theme {
 
+  --breakpoint-xs: 37.5rem;
   --color-pink-pastel-50:  #fff5f7;
   --color-pink-pastel-100: #ffe4e9; 
   --color-pink-pastel-200: #ffc9d4;
@@ -58,14 +59,19 @@
   /* Sidebar */
   --color-sidebar:          var(--color-lavender-pastel-100);
   --color-sidebar-border:   var(--color-lavender-pastel-200);
-  --color-sidebar-text:     var(--color-lavender-pastel-900);
+  --color-sidebar-text-1:   var(--color-lavender-pastel-500);
+  --color-sidebar-text-2:   var(--color-pink-pastel-400);
 
-  --color-button-sidebar-normal:  var(--color-sidebar);
-  --color-button-sidebar-hover:   var(--color-pink-pastel-200);
+  --color-button-sidebar-1-normal:  var(--color-sidebar);
+  --color-button-sidebar-1-hover:   var(--color-lavender-pastel-200);
+  --color-button-sidebar-1-active:   var(--color-lavender-pastel-300);
+  --color-button-sidebar-2-normal:  var(--color-lavender-pastel-200);
+  --color-button-sidebar-2-hover:  var(--color-lavender-pastel-300);
+  --color-button-sidebar-2-active:   var(--color-pink-pastel-100);
 
   /* Navbar */
-  --color-navbar:           var(--color-pink-200);
-  --color-navbar-border:    var(--color-pink-pastel-100);
+  --color-navbar:           var(--color-pink-100);
+  --color-navbar-border:    var(--color-pink-pastel-200);
   --color-navbar-text:      var(--color-pink-pastel-900);
   --color-navbar-menu:      var(--color-lavender-pastel-300);
   
