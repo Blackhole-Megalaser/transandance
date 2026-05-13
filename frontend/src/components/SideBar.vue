@@ -48,7 +48,7 @@
             </div>
           </li>
           <li class="h-10 flex items-center">
-            <a href="http://localhost:8000/chat">
+            <a href="http://localhost:8000/chat" class="w-full">
               <ButtonSideBar>Chat rooms</ButtonSideBar>
             </a>
           </li>
@@ -57,7 +57,7 @@
           </li>
         </ul>
       </section>
-      <footer class="flex-none text-xs underline text-sidebar-text-1">
+      <footer class="flex-none text-xs underline text-sidebar-footer">
         <hr>
         <a href="">Termes de Service</a>
         <br>
