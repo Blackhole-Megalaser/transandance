@@ -1,7 +1,6 @@
 <template>
   <nav class="flex justify-center">
-    <div class="flex items-center w-full h-20 bg-navbar px-6">
-
+    <div class="flex items-center w-full h-20 bg-navbar border-b border-navbar-border px-6 shadow-md">
       <div class="flex flex-none justify-start w-16 sm:w-38 lg:w-40">
         <button class="flex-center" type="button" @click="$emit('changeStatus')">
           <cute_paw 
@@ -22,7 +21,7 @@
           <img 
             :src="themeIndex === 0 ? ft_cat : ft_mean"
             alt="LOGO"
-            class="max-h-20 md:max-h-40"
+            :class="`s-${variant}`"
           >
         </a>
       </div>
@@ -31,6 +30,9 @@
         class="flex flex-none justify-end w-16 sm:w-38 lg:w-40 md:gap-10"
       >
         <ThemeButton class="hidden lg:flex"></ThemeButton>
+        <div class="hidden sm:max-lg:flex">
+          <ThemeToggle></ThemeToggle>
+        </div>
         <button class="flex items-center">
           profile
         </button>
@@ -44,6 +46,7 @@
 import { useThemeStore } from '../storage/theme.js';
 import { computed } from 'vue';
 import ThemeButton from './ThemeButton.vue';
+import ThemeToggle from './ThemeToggle.vue';
 import cute_paw from '../assets/cute_paw.svg?component';
 import mean_paw from '../assets/mean_paw.svg?component';
 import ft_cat from '../assets/ft_cat.png';
@@ -53,13 +56,20 @@ const theme = useThemeStore();
 const themeIndex = computed (() => theme.getThemeIndex());
 const emit = defineEmits(['changeStatus']);
 
+defineProps ({
+  variant: {
+    type: String,
+    default: "home"
+  }
+});
+
 </script>
 
 <style scoped>
 @import "../style.css";
 
 nav {
-  @apply absolute w-full top-0
+  @apply absolute w-full top-0 h-20 lg:h-40
 }
 button {
   @apply cursor-pointer
@@ -67,5 +77,10 @@ button {
 .flex-center {
   @apply flex justify-center items-center
 }
-
+.s-home {
+  @apply max-h-20 lg:max-h-40
+}
+.s-nav {
+  @apply max-h-20
+}
 </style>

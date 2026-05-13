@@ -25,19 +25,20 @@ const emit = defineEmits(['changeStatus']);
 @import '../style.css';
 
 .btn-base {
-  @apply px-6 py-2 rounded-full font-bold transition-all duration-300 shadow-xs;
+  @apply px-6 py-2 w-full rounded-full font-bold transition-all duration-300 cursor-pointer flex justify-start;
 }
 .btn-primary {
-  @apply shadow-button-sidebar-normal ;
-  background-color: var(--color-button-sidebar-normal);
-  color: var(--color-text-button-2);
+  color: var(--color-sidebar-text-1);
 }
 .btn-primary:hover {
-  background-color: var(--color-button-sidebar-hover);
+  background-color: var(--color-button-sidebar-1-hover);
 }
 .btn-primary:active {
   @apply duration-100 px-5.5 py-1.5;
-  background-color: var(--color-pink-pastel-100);
+  background-color: var(--color-button-sidebar-1-active);
 }
-
+.btn-secondary {
+  @apply hover:bg-button-sidebar-2-hover active:bg-button-sidebar-2-active
+  
+}
 </style>

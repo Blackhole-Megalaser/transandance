@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      try {
+        const store = JSON.parse(localStorage.getItem('app-theme') || '{}');
+        document.documentElement.setAttribute('data-theme', store.current || 'light');
+      } catch (e) {}
+    </script>
     <link rel="stylesheet" href="./src/style.css">
     <title>front</title>
   </head>
