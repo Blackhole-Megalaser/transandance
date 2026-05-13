@@ -1,8 +1,8 @@
 <template>
-  <button @click="theme.cycle()" class="themeBtn w-20 h-10 p-1 relative overflow-hidden">
+  <button @click="theme.cycle()" class="themeBtn w-20 h-10 relative overflow-hidden px-1 flex items-center">
     <div 
-      class="h-8 w-8 transition-transform duration-300 ease-in-out flex-center themeCursor"
-      :style="{ transform: theme.getThemeIndex() == 0 ? 'translateX(0)' : 'translateX(30px)' }"
+      class="size-8 transition-transform duration-300 ease-in-out flex-center themeCursor"
+      :style="{ transform: theme.getThemeIndex() == 0 ? 'translateX(0)' : 'translateX(40px)' }"
     >
     </div>
     <div class="absolute inset-y-0 flex items-center pointer-events-none"

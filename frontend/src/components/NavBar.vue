@@ -1,7 +1,7 @@
 <template>
   <nav class="flex justify-center">
-    <div class="flex items-center w-full h-20 bg-navbar border-b border-navbar-border px-6 shadow-md">
-      <div class="flex flex-none justify-start w-16 sm:w-38 lg:w-40">
+    <div class="flex items-center w-full h-20 bg-navbar border-b border-navbar-border px-3 sm:px-6 shadow-md">
+      <div class="flex flex-none justify-start w-1/5">
         <button class="flex-center" type="button" @click="$emit('changeStatus')">
           <cute_paw 
             v-if="themeIndex === 0"
@@ -27,9 +27,11 @@
       </div>
 
       <div 
-        class="flex flex-none justify-end w-16 sm:w-38 lg:w-40 gap-10"
+        class="flex flex-none justify-end w-1/5 gap-5 lg:gap-10"
       >
-        <ThemeButton class="hidden lg:flex"></ThemeButton>
+        <div class="hidden lg:flex">
+          <ThemeButton></ThemeButton>
+        </div>
         <div class="hidden sm:max-lg:flex">
           <ThemeToggle></ThemeToggle>
         </div>
