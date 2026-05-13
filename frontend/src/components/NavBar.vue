@@ -35,13 +35,13 @@
         <div class="hidden sm:max-lg:flex">
           <ThemeToggle></ThemeToggle>
         </div>
-        <div>
+        <div class="flex items-center justify-end">
           <div v-if="isLogged">
             <Button class="flex items-center">
               Profile
             </Button>
           </div>
-          <div v-else class="h-10 w-24 flex items-center justify-end">
+          <div v-else class="h-10 w-24 flex-center">
             <a href="/">
               <ButtonLogIn>
                 Log in
