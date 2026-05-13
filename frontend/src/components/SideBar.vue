@@ -9,12 +9,12 @@
             class="size-20"
           >
         </div>
-        <hr class="h-px my-6 border-sidebar-border">
+        <hr>
       </header>
       <ul 
         class="flex flex-col text-red-500"
       >
-        <li>
+        <li class="min-h-10 flex-col items-center">
           <ButtonSideBar
             @changeStatus="showGames = !showGames"
           >Games</ButtonSideBar>
@@ -46,17 +46,17 @@
             </ul>
           </div>
         </li>
-        <li>
+        <li class="h-10 flex items-center">
           <a href="http://localhost:8000/chat">
-            <ButtonSideBar>
-              Chat rooms
-            </ButtonSideBar>
+            <ButtonSideBar>Chat rooms</ButtonSideBar>
           </a>
         </li>
-        <li>
-          <ButtonSideBar>
-            Friendlist
-          </ButtonSideBar>
+        <li class="h-10 flex items-center">
+          <ButtonSideBar>Friendlist</ButtonSideBar>
+        </li>
+        <li class="sm:hidden">
+          <hr>
+          <ButtonSideBar>Change theme</ButtonSideBar>
         </li>
       </ul>
     </aside>
@@ -79,7 +79,12 @@ const showFriendList = ref(false);
 </script>
 
 <style>
+@import '../style.css';
+
 .flex-centered {
   @apply flex justify-center items-center
+}
+hr {
+  @apply h-px my-6 border-sidebar-border
 }
 </style>
