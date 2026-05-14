@@ -4,7 +4,7 @@
     class="themeBtn size-10 relative overflow-hidden flex-center"
   >
     <div class="m-auto size-8 absolute inset-y-0  flex-center rounded-full 
-      themeCursor active:size-6">
+      themeCursor active:size-7">
       {{ theme.current === 'dark' ? "😈" : "🌸" }}
     </div>
   </button>
