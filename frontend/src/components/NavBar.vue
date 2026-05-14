@@ -27,7 +27,7 @@
       </div>
 
       <div 
-        class="flex flex-none justify-end w-1/5 gap-5 lg:gap-10"
+        class="flex flex-none justify-end w-1/5 gap-5 lg:gap-10 items-center"
       >
         <div class="hidden lg:flex">
           <ThemeButton></ThemeButton>
@@ -37,8 +37,7 @@
         </div>
         <div class="flex items-center justify-end">
           <div v-if="isLogged">
-            <ProfileButton>
-
+            <ProfileButton class="flex">
             </ProfileButton>
           </div>
           <div v-else class="h-10 w-24 flex-center">
