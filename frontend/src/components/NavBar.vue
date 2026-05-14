@@ -25,7 +25,9 @@
           <ThemeToggle />
         </div>
         <div class="flex items-center justify-end">
-          <ProfileButton v-if="isLogged" class="flex" @click="$emit('showProfile')" />
+          <ProfileButton v-if="isLogged" 
+            class="flex" @click="$emit('showProfile')"
+          />
           <a v-else href="/" class="h-10 w-24 flex-center">
             <ButtonLogIn>
               Log in
@@ -41,7 +43,6 @@
 import { useThemeStore } from '../storage/theme.js';
 import { computed, ref } from 'vue';
 import ButtonLogIn from './ButtonLogIn.vue';
-import Button from './Button.vue';
 import ProfileButton from './ProfileButton.vue';
 import ThemeButton from './ThemeButton.vue';
 import ThemeToggle from './ThemeToggle.vue';
@@ -53,7 +54,7 @@ import ft_mean from '../assets/ft_cat-dark.png'
 const theme = useThemeStore();
 const themeIndex = computed (() => theme.getThemeIndex());
 const currentPaw = computed (() => themeIndex.value === 0 ? cute_paw : mean_paw);
-const emit = defineEmits(['changeStatus']);
+const emit = defineEmits(['changeStatus', 'showProfile']);
 const isLogged = ref(true);
 
 defineProps ({
