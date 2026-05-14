@@ -1,52 +1,36 @@
 <template>
   <nav class="flex justify-center relative">
-    <div class="flex items-center w-full h-20 bg-navbar border-b border-navbar-border px-3 sm:px-6 shadow-md">
+    <div 
+      class="flex items-center w-full h-20 bg-navbar border-b 
+        border-navbar-border px-3 sm:px-6 shadow-md"
+    >
       <div class="flex flex-none justify-start w-1/5">
         <button class="flex-center" type="button" @click="$emit('changeStatus')">
-          <cute_paw 
-            v-if="themeIndex === 0"
-            class="fill-navbar-menu size-12" 
-          />
-          <mean_paw 
-            v-else
-            class="fill-navbar-menu size-12" 
-          />
+          <component :is="currentPaw" class="fill-navbar-menu size-12" />
         </button>
       </div>
-
-      <div 
-        class="h-20 flex flex-1 justify-center items-center sm:items-start"
-      >
+      <div class="h-20 flex flex-1 justify-center items-center sm:items-start">
         <a href="/" class="cursor-pointer" aria-label="back to home">
           <img 
-            :src="themeIndex === 0 ? ft_cat : ft_mean"
-            alt="LOGO"
+            :src="themeIndex === 0 ? ft_cat : ft_mean" alt="LOGO"
             :class="`s-${variant}`"
           >
         </a>
       </div>
-
-      <div 
-        class="flex flex-none justify-end w-1/5 gap-5 lg:gap-10 items-center"
-      >
+      <div class="flex flex-none justify-end w-1/5 gap-5 lg:gap-10 items-center">
         <div class="hidden lg:flex">
-          <ThemeButton></ThemeButton>
+          <ThemeButton />
         </div>
         <div class="hidden sm:max-lg:flex">
-          <ThemeToggle></ThemeToggle>
+          <ThemeToggle />
         </div>
         <div class="flex items-center justify-end">
-          <div v-if="isLogged">
-            <ProfileButton class="flex">
-            </ProfileButton>
-          </div>
-          <div v-else class="h-10 w-24 flex-center">
-            <a href="/">
-              <ButtonLogIn>
-                Log in
-              </ButtonLogIn>
-            </a>
-          </div>
+          <ProfileButton v-if="isLogged" class="flex" @click="$emit('showProfile')" />
+          <a v-else href="/" class="h-10 w-24 flex-center">
+            <ButtonLogIn>
+              Log in
+            </ButtonLogIn>
+          </a>
         </div>
       </div>
     </div>
@@ -68,6 +52,7 @@ import ft_mean from '../assets/ft_cat-dark.png'
 
 const theme = useThemeStore();
 const themeIndex = computed (() => theme.getThemeIndex());
+const currentPaw = computed (() => themeIndex.value === 0 ? cute_paw : mean_paw);
 const emit = defineEmits(['changeStatus']);
 const isLogged = ref(true);
 
