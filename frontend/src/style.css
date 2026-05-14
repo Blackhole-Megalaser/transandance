@@ -3,27 +3,28 @@
 @theme {
 
   --breakpoint-xs: 37.5rem;
-  --color-pink-pastel-50:  #fff5f7;
-  --color-pink-pastel-100: #ffe4e9; 
-  --color-pink-pastel-200: #ffc9d4;
-  --color-pink-pastel-300: #ff99ac;
-  --color-pink-pastel-400: #ff6b88;
-  --color-pink-pastel-500: #f0506e;
-  --color-pink-pastel-600: #d43d5a;
-  --color-pink-pastel-700: #b13149;
-  --color-pink-pastel-800: #8f293c;
-  --color-pink-pastel-900: #6b2d39;
+  --color-pink-pastel-50:   #fff5f7;
+  --color-pink-pastel-75:   #fff0f4;
+  --color-pink-pastel-100:  #ffe4e9; 
+  --color-pink-pastel-200:  #ffc9d4;
+  --color-pink-pastel-300:  #ff99ac;
+  --color-pink-pastel-400:  #ff6b88;
+  --color-pink-pastel-500:  #f0506e;
+  --color-pink-pastel-600:  #d43d5a;
+  --color-pink-pastel-700:  #b13149;
+  --color-pink-pastel-800:  #8f293c;
+  --color-pink-pastel-900:  #6b2d39;
 
-  --color-lavender-pastel-50:  #f3f0ff;
-  --color-lavender-pastel-100: #e8e1ff;
-  --color-lavender-pastel-200: #d1c5ff;
-  --color-lavender-pastel-300: #b2a1ff;
-  --color-lavender-pastel-400: #937bff;
-  --color-lavender-pastel-500: #7a5fff;
-  --color-lavender-pastel-600: #6449e6;
-  --color-lavender-pastel-700: #543cc1;
-  --color-lavender-pastel-800: #46329c;
-  --color-lavender-pastel-900: #3c3260;
+  --color-lavender-pastel-50:   #f3f0ff;
+  --color-lavender-pastel-100:  #e8e1ff;
+  --color-lavender-pastel-200:  #d1c5ff;
+  --color-lavender-pastel-300:  #b2a1ff;
+  --color-lavender-pastel-400:  #937bff;
+  --color-lavender-pastel-500:  #7a5fff;
+  --color-lavender-pastel-600:  #6449e6;
+  --color-lavender-pastel-700:  #543cc1;
+  --color-lavender-pastel-800:  #46329c;
+  --color-lavender-pastel-900:  #3c3260;
 
     /* Noirs profonds (L'Obsidienne) */
   --color-obsidian-50:  #f2f2f2;
@@ -48,6 +49,7 @@
   --color-crimson-700: #b30000;
   --color-crimson-800: #800000;
   --color-crimson-900: #4d0000;
+  --color-crimson-950: #3e0000;
 
   --color-steel-300: #d1d5db;
   --color-steel-500: #6b7280;
@@ -72,11 +74,14 @@
 
   /* Navbar */
   --color-navbar:           var(--color-pink-100);
-  --color-navbar-border:    var(--color-pink-pastel-200);
+  --color-navbar-border:    var(--color-pink-200);
   --color-navbar-text:      var(--color-pink-pastel-900);
   --color-navbar-menu:      var(--color-lavender-pastel-300);
 
   --color-navbar-profile-outline: var(--color-lavender-pastel-200);
+
+  /* Profile Dialog */
+  --color-profile:          var(--color-pink-pastel-75);
   
   /* text */
   --color-text-main:        var(--color-pink-pastel-900);
@@ -134,6 +139,8 @@
 
   --color-navbar-profile-outline: var(--color-obsidian-700);
 
+  --color-profile:          var(--color-obsidian-950);
+
   /* Texte */
   --color-text-main:        var(--color-steel-300);
   --color-title:            var(--color-crimson-500);
@@ -160,4 +167,11 @@
   --color-theme-cursor:         var(--color-obsidian-600);
   --color-theme-cursor-border:  var(--color-obsidian-700);
   --color-theme-cursor-shadow:  var(--color-crimson-600);
+}
+
+body {
+  @apply bg-bg-main pt-20
+}
+.flex-center {
+  @apply flex justify-center items-center
 }

@@ -2,7 +2,7 @@
   <div class="w-60 h-[calc(100svh-5rem)] bg-sidebar fixed top-20">
     <aside class="p-6 h-full w-full flex flex-col">
       <header class="flex-none">
-        <div class="flex-centered">
+        <div class="flex-center">
           <img 
             :src="!themeIndex ? cute_cat : mean_cat"" 
             alt="mini logo"
@@ -82,12 +82,9 @@ const showFriendList = ref(false);
 
 </script>
 
-<style>
+<style scoped>
 @import '../style.css';
 
-.flex-centered {
-  @apply flex justify-center items-center
-}
 hr {
   @apply h-px my-6 border-sidebar-border
 }

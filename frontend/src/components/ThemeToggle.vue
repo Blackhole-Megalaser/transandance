@@ -27,8 +27,5 @@ const theme = useThemeStore();
   @apply rounded-full border bg-theme-cursor border-theme-cursor-border 
     shadow-sm shadow-theme-cursor-shadow 
 }
-.flex-center {
-  @apply flex justify-center items-center
-}
 
 </style>
