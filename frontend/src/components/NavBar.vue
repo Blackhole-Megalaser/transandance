@@ -75,9 +75,6 @@ nav {
 button {
   @apply cursor-pointer
 }
-.flex-center {
-  @apply flex justify-center items-center
-}
 .s-home {
   @apply max-h-20 lg:max-h-40
 }
