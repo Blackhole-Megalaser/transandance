@@ -37,9 +37,9 @@
         </div>
         <div class="flex items-center justify-end">
           <div v-if="isLogged">
-            <Button class="flex items-center">
-              Profile
-            </Button>
+            <ProfileButton>
+
+            </ProfileButton>
           </div>
           <div v-else class="h-10 w-24 flex-center">
             <a href="/">
@@ -50,7 +50,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </nav>
 </template>
@@ -60,6 +59,7 @@ import { useThemeStore } from '../storage/theme.js';
 import { computed, ref } from 'vue';
 import ButtonLogIn from './ButtonLogIn.vue';
 import Button from './Button.vue';
+import ProfileButton from './ProfileButton.vue';
 import ThemeButton from './ThemeButton.vue';
 import ThemeToggle from './ThemeToggle.vue';
 import cute_paw from '../assets/cute_paw.svg?component';
@@ -70,7 +70,7 @@ import ft_mean from '../assets/ft_cat-dark.png'
 const theme = useThemeStore();
 const themeIndex = computed (() => theme.getThemeIndex());
 const emit = defineEmits(['changeStatus']);
-const isLogged = ref(false);
+const isLogged = ref(true);
 
 defineProps ({
   variant: {

@@ -75,6 +75,8 @@
   --color-navbar-border:    var(--color-pink-pastel-200);
   --color-navbar-text:      var(--color-pink-pastel-900);
   --color-navbar-menu:      var(--color-lavender-pastel-300);
+
+  --color-navbar-profile-outline: var(--color-lavender-pastel-200);
   
   /* text */
   --color-text-main:        var(--color-pink-pastel-900);
@@ -129,6 +131,8 @@
   --color-navbar-border:    var(--color-obsidian-800);
   --color-navbar-text:      var(--color-obsidian-50);
   --color-navbar-menu:      var(--color-crimson-700);
+
+  --color-navbar-profile-outline: var(--color-obsidian-800);
 
   /* Texte */
   --color-text-main:        var(--color-steel-300);
