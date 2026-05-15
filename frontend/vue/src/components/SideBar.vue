@@ -4,7 +4,7 @@
       <header class="flex-none">
         <div class="flex-center">
           <img 
-            :src="!themeIndex ? cute_cat : mean_cat"" 
+            :src="!themeIndex ? cute_cat : mean_cat" 
             alt="mini logo"
             class="size-20"
           >
@@ -27,7 +27,7 @@
                 class="bg-button-sidebar-2-normal rounded-3xl"
               >
                 <li>
-                  <a href="">
+                  <a href="skribbl.html">
                     <ButtonSideBar
                       variant="secondary"
                     >
