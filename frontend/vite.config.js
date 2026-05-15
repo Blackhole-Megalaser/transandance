@@ -17,7 +17,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         skribbl: resolve(__dirname, 'skribbl.html'),
         tplace: resolve(__dirname, 'tplace.html'),
-		// chat: resolve(__dirname, 'chat.html'),
+		chat: resolve(__dirname, 'chat.html'),
       },
     },
   },

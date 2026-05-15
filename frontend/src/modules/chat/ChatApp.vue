@@ -1,11 +1,17 @@
 <template>
 	<div id="app">
 		<h2>Work in progress</h2>
-		<button v-on:click="sendMessage('hello')">Send< </button>
+		<Button
+			v-on:click="sendMessage('hello')"
+			>
+			> Send <
+		</button>
 	</div>
 </template>
 
-<script setup>
+<script>
+
+import Button from '../../components/Button.vue';
 
 export default {
 	name: 'App',
@@ -16,7 +22,7 @@ export default {
     },
 	methods: {
 		sendMessage: function(message) {
-			console.log("Hello")
+			console.log("UwU")
 			console.log(this.connection);
 			this.connection.send(message);
 		}
@@ -34,6 +40,9 @@ export default {
 			console.log(event);
 		}
 
+	},
+	components: {
+		Button: Button,
 	}
 }
 
