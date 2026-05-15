@@ -1,6 +1,6 @@
 <template>
   <button 
-    :class="['btn-base',`btn-${variant}`]"
+    :class="[`btn-base-${side}`,`btn-${variant}`]"
     @click="$emit('changeStatus')"
   >
     <slot />
@@ -13,6 +13,10 @@ defineProps ({
   variant: {
     type: String,
     default: "primary"
+  },
+  side: {
+    type: [String, Object],
+    default: "both"
   }
 });
 
@@ -23,8 +27,14 @@ const emit = defineEmits(['changeStatus']);
 <style scoped>
 @import "../style.css";
 
-.btn-base {
-  @apply px-6 py-2 rounded-full font-bold transition-all duration-300 shadow-xs;
+.btn-base-both {
+  @apply px-6 py-2 w-full rounded-full font-bold transition-all duration-300 shadow-xs;
+}
+.btn-base-left {
+  @apply px-6 py-2 w-full rounded-full xs:rounded-r-none font-bold transition-all duration-300 shadow-xs;
+}
+.btn-base-right {
+  @apply px-6 py-2 w-full rounded-full xs:rounded-l-none font-bold transition-all duration-300 shadow-xs;
 }
 .btn-primary {
   @apply shadow-button-1-normal;
