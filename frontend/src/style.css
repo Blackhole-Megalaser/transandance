@@ -155,7 +155,7 @@
   --color-button-1-disable: var(--color-crimson-900);
 
   /* Bouton 2 */
-  --color-button-2-normal:  var(--color-obsidian-800);
+  --color-button-2-normal:  var(--color-obsidian-700);
   --color-button-2-hover:   var(--color-obsidian-900);
   --color-button-2-active:  var(--color-obsidian-950);
   --color-button-2-disable: var(--color-obsidian-950);
