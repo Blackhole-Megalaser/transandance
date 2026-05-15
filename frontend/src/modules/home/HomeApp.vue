@@ -1,11 +1,11 @@
 <template>
   <navBar
-    @changeStatus="showSideBar = !showSideBar"
+    @changeStatus="toggleSideBar"
     class="z-60"
-    @showProfile="showProfile = !showProfile; console.log(showProfile)"
+    @showProfile="toggleSideProfile"
   />
-  <SideProfile :open="showProfile"/>
-  <main class="fscreen">
+  <SideProfile :open="showProfile" @keydown.=""/>
+  <main class="fscreen" @click="closeProfile">
     <sideBar 
       :class="!showSideBar ? '-translate-x-60 rotate-360' : 'translate-x-0 -rotate-360'"
       class="transition duration-200 z-50"
@@ -22,7 +22,7 @@
 <script setup>
 import { useThemeStore } from '../../storage/theme.js';
 import { useBreakpoints } from '@vueuse/core';
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 
 import Button from '../../components/Button.vue';
 import NavBar from '../../components/NavBar.vue';
@@ -37,19 +37,35 @@ const showProfile = ref(false);
 function closeSideBar() {
   if (showSideBar.value) showSideBar.value = false;
 }
-// function toggleSideBar() {
-//   if (!ismobile.value) return;
-//   if (!showProfile.value) showSideBar.value = true;
-// }
-// function toggleSideProfile() {
-//   console.log(ismobile.value);
-//   if (showSideBar.value && ismobile.value) {
-//     showSideBar.value = false;
-//     showProfile.value = true;
-//   }
-//   else
-//     showProfile.value = true;
-// }
+function closeProfile() {
+  if (showProfile.value) showProfile.value = false;
+}
+function toggleSideBar() {
+  if (!ismobile.value) { showSideBar.value = !showSideBar.value; }
+  else if (!showProfile.value) { showSideBar.value = true; }
+}
+function toggleSideProfile() {
+  if (!ismobile.value) { 
+    showProfile.value = !showProfile.value; 
+    return ;
+  }
+  else if (showSideBar.value) { showSideBar.value = false; }
+  showProfile.value = !showProfile.value;
+}
+const handleKeyPress = (event) => {
+  if (event.key === "Escape") {
+    if (showProfile) {
+      closeProfile();
+    }
+  }
+}
+
+onMounted(() => {
+  window.addEventListener("keydown", handleKeyPress);
+})
+onUnmounted(() => {
+  window.removeEventListener("keydown", handleKeyPress);
+})
 
 </script>
 
