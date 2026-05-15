@@ -18,8 +18,10 @@
   </main>
 </template>
 
+
 <script setup>
 import { useThemeStore } from '../../storage/theme.js';
+import { useBreakpoints } from '@vueuse/core';
 import { ref } from 'vue';
 
 import Button from '../../components/Button.vue';
@@ -27,22 +29,35 @@ import NavBar from '../../components/NavBar.vue';
 import SideBar from '../../components/SideBar.vue';
 import SideProfile from '../../components/SideProfile.vue';
 
+const breakpoints = useBreakpoints({sm: 640 });{}
+const ismobile = breakpoints.smaller("sm");
 const showSideBar = ref(false);
 const showProfile = ref(false);
 
 function closeSideBar() {
   if (showSideBar.value) showSideBar.value = false;
 }
+// function toggleSideBar() {
+//   if (!ismobile.value) return;
+//   if (!showProfile.value) showSideBar.value = true;
+// }
+// function toggleSideProfile() {
+//   console.log(ismobile.value);
+//   if (showSideBar.value && ismobile.value) {
+//     showSideBar.value = false;
+//     showProfile.value = true;
+//   }
+//   else
+//     showProfile.value = true;
+// }
 
 </script>
 
-<style>
+<style scoped>
 @import '../../style.css';
 
-body {
-  @apply bg-bg-main pt-20
-}
 .fscreen {
   @apply h-[calc(100dvh-5rem)] w-dvw
 }
+
 </style>
