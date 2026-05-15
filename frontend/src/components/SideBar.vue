@@ -27,7 +27,7 @@
                 class="bg-button-sidebar-2-normal rounded-3xl"
               >
                 <li>
-                  <a href="">
+                  <a href="skribbl.html">
                     <ButtonSideBar
                       variant="secondary"
                     >
