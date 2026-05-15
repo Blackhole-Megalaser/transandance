@@ -12,6 +12,14 @@
         <br class="xs:hidden"> {{ UserName }} !</h2>
     </div>
     <hr>
+    <div class="flex flex-col gap-2 my-2">
+      <div class="h-10 flex-center">
+        <Button>See profile page</Button>
+      </div>
+      <div class="h-10 flex-center">
+        <Button>See Friendlist</Button>
+      </div>
+    </div>
     <div class="flex-center flex-col xs:flex-row">
       <div class="h-10 w-full xs:w-1/2 flex-center">
         <Button variant="secondary" side="left">Change user</Button>
@@ -25,6 +33,7 @@
 
 <script setup>
 import { computed, ref, watch } from 'vue';
+
 import defaultcat from '../assets/default_cat.png';
 import Button from './Button.vue';
 
@@ -45,8 +54,6 @@ const ProfilePicture = computed (() => {
   return profilePic.value ?? defaultcat;
 })
 
-
-
 const UserName = computed (() => {
   return username.value || randomName
 })
@@ -57,7 +64,7 @@ const UserName = computed (() => {
 @import '../style.css';
 
 dialog {
-  @apply sm:m-2 w-full h-full z-70 sm:w-96 sm:h-96 sm:rounded-4xl 
+  @apply sm:m-2 w-full h-full z-70 sm:w-96 sm:h-auto sm:rounded-4xl 
     shadow-md fixed left-auto p-12;
   background-color: var(--color-profile);
 }

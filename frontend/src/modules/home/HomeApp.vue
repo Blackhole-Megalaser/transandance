@@ -3,6 +3,7 @@
     @changeStatus="toggleSideBar"
     class="z-60"
     @showProfile="toggleSideProfile"
+    :mobileProfile="MaskNavIcons"
   />
   <SideProfile :open="showProfile" @keydown.=""/>
   <main class="fscreen" @click="closeProfile">
@@ -22,7 +23,7 @@
 <script setup>
 import { useThemeStore } from '../../storage/theme.js';
 import { useBreakpoints } from '@vueuse/core';
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
 
 import Button from '../../components/Button.vue';
 import NavBar from '../../components/NavBar.vue';
@@ -40,6 +41,11 @@ function closeSideBar() {
 function closeProfile() {
   if (showProfile.value) showProfile.value = false;
 }
+const MaskNavIcons = computed (() => {
+  if (ismobile.value && showProfile.value) { console.log("hide") ;return false; }
+  else { console.log('show');   return true; }
+})
+
 function toggleSideBar() {
   if (!ismobile.value) { showSideBar.value = !showSideBar.value; }
   else if (!showProfile.value) { showSideBar.value = true; }
