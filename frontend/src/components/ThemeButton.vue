@@ -6,14 +6,19 @@
     >
     </div>
     <div class="absolute inset-y-0 flex items-center pointer-events-none"
-        :class="theme.getThemeIndex() == 0 ? 'right-3' : 'left-2'">
-      {{ theme.current === 'dark' ? "😈" : "🌸" }}
+        :class="theme.getThemeIndex() == 0 ? 'right-3' : 'left-3'">
+      <img 
+        :src="theme.getThemeIndex() === 0 ? sakura : imp" alt="emoji"
+        :class="theme.getThemeIndex() === 0 ? 'size-5' : 'size-4'"
+      >
     </div>
   </button>
 </template>
 
 <script setup>
 import { useThemeStore } from '../storage/theme.js';
+import imp from '../assets/smiling_imp_emoji.png';
+import sakura from '../assets/cherry-blossom_emoji.png';
 
 const theme = useThemeStore();
 </script>

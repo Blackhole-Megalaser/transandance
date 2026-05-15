@@ -29,7 +29,7 @@
             <ProfileButton v-if="isLogged" 
               class="flex" @click="$emit('showProfile')"
             />
-            <a v-else href="/" class="h-10 w-24 flex-center">
+            <a v-else href="/" class="h-10 w-28 flex-center">
               <ButtonLogIn>
                 Log in
               </ButtonLogIn>
