@@ -29,7 +29,7 @@
             <ProfileButton v-if="isLogged" 
               class="flex" @click="$emit('showProfile')"
             />
-            <a v-else href="/" class="h-10 w-24 flex-center">
+            <a v-else href="/" class="h-10 w-28 flex-center">
               <ButtonLogIn>
                 Log in
               </ButtonLogIn>
@@ -65,7 +65,7 @@ const theme = useThemeStore();
 const themeIndex = computed (() => theme.getThemeIndex());
 const currentPaw = computed (() => themeIndex.value === 0 ? cute_paw : mean_paw);
 const emit = defineEmits(['changeStatus', 'showProfile']);
-const isLogged = ref(false);
+const isLogged = ref(true);
 
 defineProps ({
   variant: {

@@ -64,7 +64,7 @@ const UserName = computed (() => {
 @import '../style.css';
 
 dialog {
-  @apply sm:m-2 w-full h-full z-70 sm:w-96 sm:h-auto sm:rounded-4xl 
+  @apply sm:m-2 w-full h-full z-70 sm:w-md sm:h-auto sm:rounded-4xl 
     shadow-md fixed left-auto p-12;
   background-color: var(--color-profile);
 }
