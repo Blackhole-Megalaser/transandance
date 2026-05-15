@@ -16,11 +16,15 @@
         class="transition duration-200 fscreen fixed z-49 bg-black/40"
         @click="closeSideBar"
     ></div>
+	<div class="pt-30">
+		<Skribbl />
+	</div>
   </main>
 </template>
 
 
 <script setup>
+import Skribbl from './game/Skribbl.vue';
 import { useThemeStore } from '../../storage/theme.js';
 import { useBreakpoints } from '@vueuse/core';
 import { ref, onMounted, onUnmounted, computed } from 'vue';
